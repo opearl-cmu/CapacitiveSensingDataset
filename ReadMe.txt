@@ -1,8 +1,6 @@
-Title: Capacitive Sensing for Natural Environment Biomechanics Monitoring
-Primary Admin: Owen Pearl
-URL: https://simtk.org/projects/csdataset
-
 Overview: This capacitive sensing dataset comprises data from two different studies with capacitive sensing (organized in the two subsequent folders).
+
+Please cite the following work when using this dataset:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
