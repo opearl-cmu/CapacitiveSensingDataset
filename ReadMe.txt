@@ -108,36 +108,47 @@ Includes meta data on the participants. The meta data file includes age, height,
 mass, sex, dominant leg, leg length, and preferred walking speed.
 
 ----------------------
-WalkingData.mat
+Directory Organization
 
-Contains a struct with all data organized and labeled. This data is roughly segmented to the start and ends of the trials, however the IMU data, CS data, and EMG data are not perfectly time-synced to the mocap and GRF data (which are both spatially and time synced together). To time sync the wearables data, use the IMUs (IMUs are also onboard both the CS and EMG sensors) and compare with the GRF data for precise time syncing and alignment.
+SubID (folder)
 
-WalkingData.(SubID).(Trial)
-
-ans = 
-
-  struct with fields:
-
-        SubjectInfo: [1×1 struct] - struct with the meta data for each subject
-         MarkerData: [1×1 struct] - Markers measured with optical motion capture system (spatially synced, and time synced with GRF data)
-          ForceData: [1×1 struct] - Ground reaction forces as measured by the force plates in the global coordinate system (synced with motion capture data)
-          AccelData: [1×1 struct] - Accelerations measured from IMUs (time synced within IMU data)
-           GyroData: [1×1 struct] - Angular velocities measured from IMUs (time synced within IMU data)
-         MagnetData: [1×1 struct] - Magnetometer readings from XSens IMUs (time synced within IMU data)
-    OrientationData: [1×1 struct] - Orientations (quaternions) from XSens's built in 9-DOF sensor-fusion filter (time synced within IMU data)
+	SIDMRIData.csv (file) A delimited report of the body composition MRI measurements
 	
-			- AND - 
+	SIDMRIFiberLength.csv (file)  A delimited report of the resting fiber length of each participant as measured with MRI
 	
-            LCSData: [1×1 struct] - Left shank and thigh CS data
-            RCSData: [1×1 struct] - Right shank and thigh CS data
-			
-			- OR - 
-			
-			EMGData: [1x1 struct] - Full body EMG data from both legs
-
---------------------
-MRI Results (folder)
-
-SIDMRIData.csv (file) A delimited report of each participants muscle composition MRI measurements
-SIDMRIFiberLength.csv (file)  A delimited report of the resting muscle fiber lengths of each participant as measured with MRI
+	SIDMRIReport.pdf (file) A visual report of the body composition results from MRI
+	
+	CSBaseline (folder)
+	CSStiffKnee (folder)
+	EMGBaseline (folder)
+	EMGStiffKnee (folder)
+	^Within each of these is the following:
+	
+		OpenSim_SubID_TrialFolder_Calibration.mat - .mat loadable struct with the meta data for each subject
+	
+		OpenSim_SubID_TrialFolder_datamerged.mat - .mat loadable struct with all of the individually stored OpenSim file data for quick and easy loading in MATLAB
+	
+		(the rest of these are OpenSim format versions of the above^)
+	
+		OpenSim_static_markers.trc - Marker trajectories during a static trial for model scaling
+		
+		OpenSim_SubID_TrialFolder_Accel.trc - Accelerations measured from IMUs (time synced within IMU data)
+		
+		OpenSim_SubID_TrialFolder_Gyro.trc - Angular velocities measured from IMUs (time synced within IMU data)
+		
+		OpenSim_SubID_TrialFolder_Magnet.trc - Magnetometer readings from XSens IMUs (time synced within IMU data)
+		
+		OpenSim_SubID_TrialFolder_Orientations.sto - Orientations (quaternions) from XSens's built in 9-DOF sensor-fusion filter (time synced within IMU data)
+		
+		OpenSim_SubID_TrialFolder_GRF.mot - Ground reaction forces as measured by the force plates in the global coordinate system (synced with motion capture data)
+		
+		OpenSim_SubID_TrialFolder_markers.trc - Markers measured with optical motion capture system (spatially synced, and time synced with GRF data)
+		
+		OpenSim_SubID_TrialFolder_LCS.mot - Left shank and thigh CS data
+		
+		OpenSim_SubID_TrialFolder_RCS.mot - Right shank and thigh CS data
+		
+		OpenSim_SubID_TrialFolder_EMG.mot - Full body EMG data from both legs
+		
+		*Important Note: This data is roughly segmented to the start and ends of the trials, however the IMU data, CS data, and EMG data are not perfectly time-synced to the mocap and GRF data (which are synced together). To sync the data, use the IMU data (IMUs on board both the CS and EMG sensors) and compare with the GRF data for precise time syncing and alignment.
 	
