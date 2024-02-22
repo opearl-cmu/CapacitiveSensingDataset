@@ -63,7 +63,6 @@ IndoorWalkingData =
             Subject16: [1×1 struct]
             Subject17: [1×1 struct]
 
-
 ----------------------
 OutdoorWalkingData.mat
 
@@ -93,8 +92,10 @@ Subject01 =
       Baseline: [1×1 struct]
          ToeIn: [1×1 struct]
     Difference: [1×1 struct]
-	
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ShankAndThighExperiments: 
 
