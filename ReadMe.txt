@@ -1,6 +1,9 @@
 Overview: This capacitive sensing dataset comprises data from two different studies with capacitive sensing (organized in the two subsequent folders).
 
 Please cite the following work when using this dataset:
+Pearl, O., Rokhmanova, N., Dankovich, L., Faille, S., Bergbreiter, S., & Halilaj, E. (2022). 
+Capacitive Sensing for Natural Environment Rehabilitation Monitoring [Preprint]. 
+In Review. https://doi.org/10.21203/rs.3.rs-1902381/v1
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
